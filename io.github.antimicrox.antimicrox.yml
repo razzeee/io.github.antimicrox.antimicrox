@@ -6,6 +6,7 @@ command: antimicrox
 finish-args:
   # KDE Plasma tray icon
   - --talk-name=org.kde.StatusNotifierWatcher
+  - --own-name=org.kde.StatusNotifierItem-*
   # X11 + XShm access
   - --share=ipc
   - --socket=fallback-x11
@@ -18,7 +19,7 @@ finish-args:
 
 modules:
   - name: antimicrox
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     config-opts:
       - -DANTIMICROX_PKG_VERSION=flatpak
       - -DINSTALL_UINPUT_UDEV_RULES=OFF
